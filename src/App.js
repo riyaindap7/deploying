@@ -6,6 +6,8 @@ import CartTab from './components/cartTab'; // Import CartTab
 import Checkout from './components/checkout'; // Import Checkout
 import Razorpay from './components/razorpay'; // Import Razorpay component
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
+
 
 import Main from './components/Main';
 import Login from './components/Login';
@@ -16,7 +18,7 @@ import CookieConsent from './components/cookie'; // Import CookieConsent
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <CookieConsent /> {/* Add CookieConsent here */}
       <Routes>
         {/* Directly render the Main component at the root path */}
@@ -39,7 +41,7 @@ const App = () => {
         {/* Redirect from old '/main' path to the new root path */}
         <Route path='/main' element={<Navigate to="/" />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
